@@ -1,13 +1,12 @@
 import React from 'react'
-import MainRouters from './pages/index'
+import Root from './pages/root'
 import NetworkStatus from './components/network-status/NetworkStatus'
 
 const App = () => {
-  
   return (
-    <div>
-      <NetworkStatus/>
-      <MainRouters/>
+    <div >
+        <NetworkStatus/>
+        <Root/>
     </div>
   )
 }

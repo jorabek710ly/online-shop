@@ -1,22 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./css/index.css";
-import { BrowserRouter } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { Provider } from "react-redux";
-import { store } from "./redux/index.js";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import "./css/index.css"
+import App from './App.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import { store } from './rudex/index'
+import { Provider } from 'react-redux'
+import { QueryClient, QueryClientProvider, useQuery, } from '@tanstack/react-query'
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <QueryClientProvider client={queryClient}>
-          <App />
-        </QueryClientProvider>
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient} >
+      <Provider store={store} >
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
       </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+    </QueryClientProvider>
+  </StrictMode>,
+
+)
