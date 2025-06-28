@@ -18,7 +18,7 @@ const NotFound = () => {
         to="/"
         className="px-6 py-3 bg-[#B88E2F] text-white text-lg font-semibold rounded-lg shadow hover:bg-[#9e7422] transition-all duration-300"
       >
-        ⬅ Back to Home
+        Back to Home
       </Link>
     </div>
   );
